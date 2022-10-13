@@ -11,8 +11,7 @@ namespace University.Migrations
                 name: "Course",
                 columns: table => new
                 {
-                    CourseId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CourseId = table.Column<int>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     Credits = table.Column<int>(nullable: false)
                 },
@@ -25,7 +24,7 @@ namespace University.Migrations
                 name: "Student",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     LastName = table.Column<string>(nullable: true),
                     FirstMidName = table.Column<string>(nullable: true),
@@ -33,7 +32,7 @@ namespace University.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Student", x => x.StudentId);
+                    table.PrimaryKey("PK_Student", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,7 +58,7 @@ namespace University.Migrations
                         name: "FK_Enrollment_Student_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Student",
-                        principalColumn: "StudentId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
