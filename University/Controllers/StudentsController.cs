@@ -33,6 +33,7 @@ namespace University.Controllers
                 searchString = currentFilter;
             }
 
+
             ViewData["CurrentFilter"] = searchString;
 
             var students = from s in _context.Students
