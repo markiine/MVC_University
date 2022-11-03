@@ -24,6 +24,8 @@ namespace University.Models
         public DateTime StartDate { get; set; }
 
         public int? InstructorId { get; set; }
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
         public Instructor Administrator { get; set; }
         public ICollection<Course> Courses { get; set; }
